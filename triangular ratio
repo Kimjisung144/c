@@ -1,0 +1,84 @@
+#include <stdio.h>
+#include <math.h>
+
+float a,b,c,s,m;
+char aaa[10];
+
+float madd(float a, float b){
+	m=sqrt(pow(a,2)+pow(b,2)); 
+	return m;
+}
+
+void pr1(void){
+	printf("sin,cos,tan중 1가지 고르시오:");
+}
+
+char* shut(void){
+	scanf("%s",&aaa); //sin ,cos, tan 입력 // 
+	return aaa;
+}
+
+void tr(float a,float b,float m){
+	pr1();
+	shut();
+	if(aaa[0] == 's' && aaa[1]=='i' && aaa[2]=='n') {
+		printf("sin = %2f\n",a/b);
+	}else if(aaa[0] == 'c' && aaa[1]=='o' && aaa[2]=='s'){
+		printf("cos = %2f\n",m/b);
+	}else if(aaa[0]=='t' && aaa[1]=='a' && aaa[2]=='n'){
+		printf("tan = %2f\n",a/m);
+	}else{
+		printf("조건문 안됨 ");
+	}
+}
+
+void fo(float a,float b,float m){
+	pr1();
+	shut();
+	if(aaa[0] == 's' && aaa[1]=='i' && aaa[2]=='n') {
+		printf("sin = %2f\n",b/m);
+	}else if(aaa[0] == 'c' && aaa[1]=='o' && aaa[2]=='s'){
+		printf("cos = %2f\n",a/m);
+	}else if(aaa[0]=='t' && aaa[1]=='a' && aaa[2]=='n') {
+		printf("tan = %2f\n",a/b);
+	}else{
+		printf("조건문 안됨 ");
+	}
+}
+
+void si(float a,float b,float m){
+	pr1();
+	shut();
+	if(aaa[0] == 's' && aaa[1]=='i' && aaa[2]=='n'){
+		printf("sin = %2f\n",m/b);
+	}else if (aaa[0] == 'c' && aaa[1]=='o' && aaa[2]=='s'){
+		printf("cos = %2f\n",a/b);
+	}else if(aaa[0]=='t' && aaa[1]=='a' && aaa[2]=='n'){
+		printf("tan = %2f\n",m);
+	}else{
+		printf("조건문 안됨 ");
+	}		
+}
+
+int main(){
+	short aa; //원하는 각도// 
+	
+	printf("밑변 a와 나머지 변b를 입력하시오:");
+	scanf("%2f %2f",&a,&b); //변 a,b입력// 
+	madd(a,b); // 3번쨰 변 길이 구하는 공식 호출// 
+	printf("원하는 각도를 입력하시오:");
+	scanf("%d",&aa);//각도 입력//	
+	switch(aa)
+	{
+		case 30:
+			tr(a,b,m); //c =a ,s =b, m = c//
+			break;
+		case 45:
+			fo(a,b,m);
+			break;
+		case 60:
+			si(a,b,m);
+			break;
+	}
+	return 0;
+}
