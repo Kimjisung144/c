@@ -1,0 +1,65 @@
+#include <stdio.h>
+int p1 =0;
+int p2 =0;
+
+void re(char a,char b)
+{
+	if(a == 'r'&& b =='s'){
+		printf("p1이 이겼습니다.\n");
+		p1++; 
+	}else if(a == 'r' && b =='r'){
+		printf("무승부\n");
+	}else if(a == 'r' && b == 'p'){
+		printf("p2가 이겼습니다.\n");
+		p2++;
+	}
+}
+
+void se (char a,char b){
+	if(a =='s' && b == 'r'){
+		printf("p2가 이겼습니다.\n");
+		p2++;
+	}else if(a == 's' && b == 's'){
+		printf("무승부\n");
+	}else if(a == 's' && b == 'p'){
+		printf("p1이 이겼습니다.\n");
+		p1++;
+	} 
+}
+
+void pe (char a, char b){
+	if(a == 'p' && b == 'r'){
+		printf("p1이 이겼습니다.\n");
+		p1++;
+	}else if(a == 'p' && b == 's'){
+		printf("p2가 이겼습니다.\n");
+		p2++;
+	}else if(a == 'p' && b == 'p'){
+		printf("무승부 입니다.\n");
+	} 
+}
+int main()
+{
+	char a,b;
+	while(p1 <3 || p2 <3){
+		printf("바위는 r,가위는 s,보는 p입력하시오\n");
+		scanf("%c %c",&a,&b);
+		switch(a){
+			case 'r':
+				re(a,b);
+				break;
+			case 's':
+				se(a,b);
+				break;
+			case 'p':
+				pe(a,b);
+				break;
+			}
+		}	
+	if(p1 ==3){
+		printf("p1이 %d번 p2가 %d승리 하셔서 p1승리\n",p1,p2);
+	}else{
+		printf("p1이 %d번 p2가 %d승리 하셔서 p2승리",p1,p2);
+	} 
+return 0;
+}
