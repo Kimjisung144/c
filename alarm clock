@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int hour,houradd,minuteadd,minute,day;
+
+int mad()
+{
+	minute = minute+minuteadd;
+	hour = hour+minute/60;
+	hour = hour+houradd;
+	minute = minute%60;
+	day = day+hour/24;
+	hour = hour%24;
+	return hour,minute,day;
+}
+int main()
+{
+	printf("몇일 입니까?");
+	scanf("%d",&day);
+	printf("시을 입력하시오");
+	scanf("%d",&hour);
+	printf("분을 입력하시오");
+	scanf("%d",&minute);
+	printf("더할 시을 입력하시오");
+	scanf("%d",&houradd);
+	printf("더할 분을 입력하시오");
+	scanf("%d",&minuteadd);
+	mad();
+	printf("%d일%d시%d분에 꺠워드립니다.",day,hour,minute);
+}
