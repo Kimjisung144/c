@@ -1,0 +1,77 @@
+#include <stdio.h>
+	
+	int sc(char a)
+	{									
+		if(a == 'a'){
+			printf("=z\n");
+		}else if(a == 'b'){
+			printf("=y\n");
+		}else if(a == 'c'){
+			printf("=x\n");
+		}else if(a == 'd'){
+			printf("=w\n");
+		}else if(a == 'e'){
+			printf("=v\n");
+		}else if(a == 'f'){
+			printf("=u\n");
+		}else if(a == 'g'){
+			printf("=t\n");
+		}else if(a == 'h'){
+			printf("=s\n");
+		}else if(a == 'i'){
+			printf("=r\n");
+		}else if(a == 'j'){
+			printf("=q\n");
+		}else if(a == 'k'){
+			printf("=p\n");
+		}else if(a == 'l'){
+			printf("=o\n");
+		}else if(a == 'm'){
+			printf("=n\n");
+		}else if(a == 'n'){
+			printf("=m\n");
+		}else if(a == 'o'){
+			printf("=l\n");
+		}else if(a == 'p'){
+			printf("=k\n");
+		}else if(a == 'q'){
+			printf("=j\n");
+		}else if(a == 'r'){
+			printf("=i\n");
+		}else if(a == 's'){
+			printf("=h\n");
+		}else if(a == 't'){
+			printf("=g\n");
+		}else if(a == 'u'){
+			printf("=f\n");
+		}else if(a == 'v'){
+			printf("=e\n");
+		}else if(a == 'w'){
+			printf("=d\n");
+		}else if(a == 'x'){
+			printf("=c\n");
+		}else if(a == 'y'){
+			printf("=b\n");
+		}else if(a == 'z'){
+			printf("=a\n");
+		}else if(a == '_'){
+			printf("=-\n");
+		}
+	}
+	
+int main() {
+	int i;
+	char a;
+	i=1;
+	printf("변형할 글자 1개를 입력해주세요\n");
+	printf("그만 하시려면 ~를 입력해주세요\n");
+		while(1)
+		{
+			scanf("%c",&a);
+			if(a == '~')
+				break;
+			sc(a);
+		}
+	printf("종료합니다.");
+	return 0;
+}
