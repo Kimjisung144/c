@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main(void)
+{	
+	int a=0;
+	a = scanf("%d",&a);
+		if (a % 2 == 0)
+		{
+			printf("%d은/는 짝수 입니다.", a);
+		}
+		else {
+			printf("%d은/는 홀수 입니다.", a);
+		}
+	return 0;
+} 
