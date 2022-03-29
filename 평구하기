@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main() {
+	const float p = 3.3058;
+	float pa, mm;
+	printf("평을 입력하세요:");
+	scanf_s("%f", &pa);
+	mm = pa * p;
+	printf("%f 평방미터입니다.", mm);
+	return 0;
+}
