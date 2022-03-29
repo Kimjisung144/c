@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+	double b;
+	int a,c;
+	printf("키를 입력하시오(cm):");
+	scanf_s("%d", &a);
+	b = a / 2.54;
+	c = (int)b / 12;
+	printf("%dcm는 %d피트 %lf인치입니다.", a, c, b);
+	return 0;
+}
