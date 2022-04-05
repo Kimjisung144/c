@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+	int a;
+	printf("n의 값을 입력하시오");
+	scanf_s("%d", &a);
+	if (a >= 100)
+	{
+		printf("large");
+	}
+	else if (a < 100)
+	{
+		printf("small");
+	}
+	return 0;
+}
