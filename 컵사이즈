@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+	int a;
+	printf("컵사이즈를 입력하시오");
+	scanf_s("%d", &a);
+	if (a < 100)
+	{
+		printf("small");
+	}
+	else if (a >= 100 && a < 200)
+	{
+		printf("medium");
+	}
+	else if (a >= 200)
+	{
+		printf("large");
+	}
+	return 0;
+}
