@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+	float a, b,c;
+	scanf_s("%f, %f, %f", &a, &b, &c);
+	if (a == 0)
+	{
+		printf("근은 %2f이다.",-(b / c));
+	}
+	else if (b * b - (4 * a * c) < 0)
+	{
+		printf("실근은 존재하지 않습니다.");
+	}
+	else if (b * b - (4 * a * c) >= 0)
+	{
+		printf("%f", -b + (b * b - (4 * a * c))/(2*a));
+		printf("%f", -b - (b * b - (4 * a * c)) / (2 * a));
+	}
+	return 0;
+}
