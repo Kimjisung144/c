@@ -6,7 +6,7 @@ int main() {
 	scanf_s("%d %d", &a, &b);
 	if (a <= 17)
 	{
-		if (b >= 65 && b <= 12)
+		if (b >= 65 || b <= 12)
 		{
 			printf("25,000원입니다.");
 		}
