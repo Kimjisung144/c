@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+int main()
+{
+	int a, b;
+	a = rand();
+	int cnt = 1;
+	do {
+		printf("숫자를 입력해주세요");
+		scanf_s("%d", &b);
+		if (a < b) {
+			printf("목표값보다 큼니다.");
+			cnt = cnt + 1;
+		}
+		else if (a > b) {
+			printf("목표값보다 작습니다.");
+			cnt = cnt + 1;
+		}
+		else if (a == b) {
+			break;
+		}
+	}while (a != b);
+	printf("%d번째에 맞추셨습니다.",cnt);
+	return 0;
+}
