@@ -1,0 +1,39 @@
+#include <stdio.h>
+int zz(int a);//함수 원형들
+int ac();//함수 원형들
+int happyBirthday(int a, int b); //함수 원형들 사용자정의 함수가 메인함수보다 나중에 적으면 위에 함수원형을 적어주어야한다.
+
+int main()
+{
+	int input_a = ac();
+	int input_b = ac();
+
+	printf("%d %d",happyBirthday(input_a,input_b));
+	return 0;
+}
+
+int ac()
+{
+	int a;
+	scanf_s("%d", &a);
+	return a;
+}
+
+int happyBirthday(int a, int b)
+{
+	int sum, pac_1, pac_2;
+	pac_1 = zz(a);
+	pac_2 = zz(b);
+	sum = pac_1 / (zz(a - b)) * pac_2;
+	return sum;
+}
+
+int zz(int a)
+{
+	int sum_1 = 1;
+	for (int i = 1; i <= a; i++)
+	{
+		sum_1 = sum_1 * i;
+	}
+	return sum_1;
+}
