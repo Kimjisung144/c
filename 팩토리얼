@@ -1,0 +1,24 @@
+#include <stdio.h>
+int happyBirthday(int ba)
+{
+	int sum = 1;
+	for (int i = 1; i <= ba; i++)
+	{
+		sum = sum * i;
+	}
+	return sum;
+}
+
+int as()
+{
+	int inpu;
+	printf("원하는 숫자 팩토리얼을 입력하시오:");
+	scanf_s("%d", &inpu);
+	return inpu;
+}
+int main()
+{
+	int input_a = as();
+	printf("%d", happyBirthday(input_a));
+	return 0;
+}
