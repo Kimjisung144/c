@@ -1,0 +1,10 @@
+//사용자가 아스키 코드값을 입력하면 그 아스키 코드값에 해당하는 문자를 출력하는 프로그램을 작성하라.
+#include <stdio.h>
+int main()
+{
+	int a;
+	printf("아스키문자 33번 127까지 입력하시오:");
+	scanf_s("%d", &a);
+	printf("%c", a);
+	return 0;
+} 
