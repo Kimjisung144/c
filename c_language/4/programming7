@@ -1,0 +1,14 @@
+/*물리학에서 운동에너지는 e = mv^2/2.0으로 */
+
+#include <stdio.h>
+int main()
+{
+	double a,b,j;
+	printf("질량(kg):");
+	scanf_s("%lf", &a);
+	printf("속도(m/s):");
+	scanf_s("%lf", &b);
+	j = (a * b * b) * 0.5;
+	printf("운동에너지(j):%lf", j);
+	return 0;
+} 
