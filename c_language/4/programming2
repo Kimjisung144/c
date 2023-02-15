@@ -1,0 +1,12 @@
+//사용자로부터 정수를 16진수로 입력받아서 8진수 , 10진수, 18진수 형태로 출력하는 프로그램을 작성하라
+#include <stdio.h>
+int main()
+{
+	int number;
+	printf("16진수 숫자 적기:____\b\b\b\b");
+	scanf_s("%x", &number);
+	printf("10진수는 %#d\n", number);
+	printf("8진수는 %#o\n", number);
+	printf("16진수는 %#x\n", number);
+	return 0;
+} 
