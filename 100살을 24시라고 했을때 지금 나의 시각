@@ -18,8 +18,8 @@ int main()
 	min1 = (int)((user_time - inte) * 100); // 유저시각에서 시를 빼기를 함으로써 분값가져오기
 	if (min1 >= 60)
 	{
-		min2 = min1 % 60;
-		inte = inte + 1;
+		min2 = min1 % 60; //분값 구하기
+		inte = inte + 1; // 반올림해서 시에 반올림값 더하기
 	}
 	else {
 		min2 = min1;
