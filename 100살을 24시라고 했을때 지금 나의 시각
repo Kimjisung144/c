@@ -1,0 +1,35 @@
+//지금 인생의 시각은?
+#include <stdio.h>
+
+int main()
+{
+	int inte;         // 24시간으로 정했을떄 유저의 시각 부분중 정수
+	int min1;         //분 임시값
+	int min2;         // 분값
+	int user_age;     //유저 나이
+	float user_time; // 24시간으로 정했을떄 유저의 시각
+	float life = 100;   //100살 
+	float oneday = 24;  // 24시간
+
+	printf("당신은 몇살이십니까?:__\b\b");
+	scanf_s("%d", &user_age);               //유저 나이 입력받기
+	user_time = (oneday / life) * user_age; // 24시간을 정했을떄 유저 시각의 실수값
+	inte = (int)user_time;                  //실수값에서 시를 가져오기
+	min1 = (int)((user_time - inte) * 100); // 유저시각에서 시를 빼기를 함으로써 분값가져오기
+	if (min1 >= 60)
+	{
+		min2 = min1 % 60;
+		inte = inte + 1;
+	}
+	else {
+		min2 = min1;
+	}
+	if (inte>=12)
+	{
+		printf("100살을 24시간으로 정했을때 지금 당신의 시간은 오후%d시 %d분 입니다.", inte,min2);
+	}
+	else {
+		printf("100살을 24시간으로 정했을때 지금 당신의 시간은 오전%d시 %d분입니다.", inte,min2);
+	}
+	return 0;
+} 
