@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main()
+{
+	int cost,pay,change,sum;
+	int ch50000, ch10000, ch5000, ch1000, ch500, ch100, ch50, ch10;//물건값, 손님이 낸돈 , 거스름돈
+	while (1) {
+		printf("물건값을 입력하시오:");
+		scanf_s("%d", &cost);
+		printf("손님이 낸 돈을 입력하시오:");
+		scanf_s("%d", &pay);
+		change = pay - cost;
+		if (change > 0)
+		{
+			ch50000 = change / 50000; //거스를 5만원권 갯수
+			sum = change % 50000;
+
+			ch10000 = sum / 10000;
+			sum = sum % 10000;
+
+			ch5000 = sum / 5000;
+			sum = sum % 5000;
+
+			ch1000 = sum / 1000;
+			sum = sum % 1000;
+
+			ch500 = sum / 500;
+			sum = sum % 500;
+
+			ch100 = sum / 100;
+			sum = sum % 100;
+
+			ch50 = sum / 50;
+			sum = sum % 50;
+
+			ch10 = sum / 10;
+			printf("거스름돈은 %d원 5만원권:%d장 1만원권:%d장 5천원권:%d장 1천원권:%d장 500원:%d개 100원:%d개 50원:%d개 10원:%d개", change, ch50000, ch10000, ch5000, ch1000, ch500, ch100, ch50, ch10);
+			break;
+		}else if (change == 0) {
+			printf("거스를 필요가 없습니다.");
+			break;
+		}else {
+			change = -change;
+			printf("금액이 %d원 부족합니다.\n", change);
+			printf("다시 입력해주세요\n");
+		}
+	}
+	return 0;
+} 
