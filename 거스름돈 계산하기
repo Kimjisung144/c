@@ -2,47 +2,47 @@
 
 int main()
 {
-	int cost,pay,change,sum;
-	int ch50000, ch10000, ch5000, ch1000, ch500, ch100, ch50, ch10;//물건값, 손님이 낸돈 , 거스름돈
+	int cost,pay,change,sum;//순서대로 물건값, 손님이 낸돈 , 거스름돈
+	int ch50000, ch10000, ch5000, ch1000, ch500, ch100, ch50, ch10; // 거슬러야하는 금액별 갯수 저장변수 
 	while (1) {
 		printf("물건값을 입력하시오:");
-		scanf_s("%d", &cost);
+		scanf_s("%d", &cost); // 물건값 입력
 		printf("손님이 낸 돈을 입력하시오:");
-		scanf_s("%d", &pay);
-		change = pay - cost;
+		scanf_s("%d", &pay); // 손님이낸 금액 입력
+		change = pay - cost; // 거스름돈 구하기
 		if (change > 0)
 		{
 			ch50000 = change / 50000; //거스를 5만원권 갯수
-			sum = change % 50000;
+			sum = change % 50000; // 5만원권 이하 나머지 금액
 
-			ch10000 = sum / 10000;
-			sum = sum % 10000;
+			ch10000 = sum / 10000; //거스를 1만원권 갯수
+			sum = sum % 10000;// 1만원권 이하 나머지 금액
 
-			ch5000 = sum / 5000;
-			sum = sum % 5000;
+			ch5000 = sum / 5000;//거스를 5천원권 갯수
+			sum = sum % 5000;// 5천원권 이하 나머지 금액
 
-			ch1000 = sum / 1000;
-			sum = sum % 1000;
+			ch1000 = sum / 1000; //거스를 1천원권 갯수
+			sum = sum % 1000; // 1천원권 이하 나머지 금액
 
-			ch500 = sum / 500;
-			sum = sum % 500;
+			ch500 = sum / 500;//거스를 5백원 갯수
+			sum = sum % 500; // 5백원 이하 나머지 금액
 
-			ch100 = sum / 100;
-			sum = sum % 100;
+			ch100 = sum / 100; //거스를 1백원 갯수
+			sum = sum % 100; // 1백원 이하 나머지 금액
 
-			ch50 = sum / 50;
-			sum = sum % 50;
+			ch50 = sum / 50; //거스를 5십원 갯수
+			sum = sum % 50;// 5십원 이하 나머지 금액
 
-			ch10 = sum / 10;
+			ch10 = sum / 10; //거스를 1십원 갯수
 			printf("거스름돈은 %d원 5만원권:%d장 1만원권:%d장 5천원권:%d장 1천원권:%d장 500원:%d개 100원:%d개 50원:%d개 10원:%d개", change, ch50000, ch10000, ch5000, ch1000, ch500, ch100, ch50, ch10);
-			break;
+			break; // 계산이 되었으니 여기서 끝내기
 		}else if (change == 0) {
 			printf("거스를 필요가 없습니다.");
-			break;
+			break; // 계산이 되었으니 여기서 끝내기
 		}else {
-			change = -change;
+			change = -change; // 부족한 금액을 표시하기위해서 마이너스값을 플러스로 변경
 			printf("금액이 %d원 부족합니다.\n", change);
-			printf("다시 입력해주세요\n");
+			printf("다시 입력해주세요\n"); // 다시시작
 		}
 	}
 	return 0;
