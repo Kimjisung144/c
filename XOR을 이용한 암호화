@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main()
+{
+	char number;
+	char key = 0xff;
+	char zzz;
+	printf("문자를 입력하시오");
+	scanf_s("%c", &number);
+	printf("변환된 문자는: %c\n", number ^ key);
+	zzz = number ^ key;
+	printf("원래 문자는 ?:%c", zzz ^key);
+	return 0;
+} 
