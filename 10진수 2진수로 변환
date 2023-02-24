@@ -7,10 +7,10 @@ int main()
 	scanf_s("%u", &a); // 10진수값 입력 %u는 unsigned때문에
 	unsigned int mask = 1 << 7; // 8비트 맨 앞부터 비트and 연산하기 위해서 비트이동
 	printf("이진수는:");
-	for (int i = 0; i < 8; i++)
+	for (int i = 0; i < 8; i++) //mask변수가 8칸을 갖기때문에 8번 반복
 	{
-		((a & mask) == 0) ? printf("0") : printf("1"); // 돌아가면서 계산
-		mask = mask >> 1;
+		((a & mask) == 0) ? printf("0") : printf("1"); //맨 왼쪽자리부터 10진수값을 2진수로 비트 계산해서 값이 0일때 0이기때문에 0이고 값이 0이 아닐시 1이 존재하기 때문에 1이다.
+		mask = mask >> 1; // mask변수 1값을 비트 모른쪽으로 한칸 이동
 	}
 	return 0;
 } 
