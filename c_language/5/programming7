@@ -1,0 +1,13 @@
+//정수에 비트 연산자<<를 한번 적용하면 2를 곱한 값을 얻을 수 있다. 또 정수에 비트 연산자 >>를 한번 적용하면 2로 나눈 값을 얻을 수있다. 사용자로 부터 변수 x,y를 입력받아서 x<<y의 값을 출력하는 프로그램을 작성하여 보자
+#include <stdio.h>
+
+int main()
+{
+	int num1,count;
+	printf("정수를 입력하시오:___\b\b\b"); // 
+	scanf_s("%d", &num1);
+	printf("2를 곱하고 싶은 횟수를 입력하시오:");
+	scanf_s("%d", &count);
+	printf("%d << %d의 값: %d", num1, count, num1 << count);
+	return 0;
+}
