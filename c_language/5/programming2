@@ -1,0 +1,11 @@
+//2개의 double형의 실수를 읽어서 합,차,곱,몫을 구하는 프로그램을 작성하라
+#include <stdio.h>
+
+int main()
+{
+	double a, b;
+	printf("실수2개를 입력하시오:");
+	scanf_s("%lf %lf", &a, &b);
+	printf("%lf %lf %lf %lf ", a + b, a - b, a * b, a / b);
+	return 0;
+}
