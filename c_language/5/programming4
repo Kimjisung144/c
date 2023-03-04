@@ -1,0 +1,15 @@
+//cm로 표현된 키를 입력하여 피트와 인치로 변환하는 프로그램을 작성하라. 1피트는 12인치이고 1인치는 2.54cm이다.
+#include <stdio.h>
+
+int main()
+{
+	int cm,feet; //cm와feet
+	double inch; //inch
+	printf("키를 입력하시오:___\b\b\b");
+	scanf_s("%d", &cm); // 키값 입력받기
+	inch = (cm / 2.54); // 1인치에 2.54cm이기에 키에서 2.54를 나눈다.
+	feet = (int)(inch / 12); // 피트는 12인치이기에 변환된인치에서 12나눈다.
+	inch = inch - (feet * 12); // 나머지 값은 곱해서 뺀다음 나머지를 출력
+	printf("%dcm는 %d피트 %lf인치입니다.", cm, feet, inch);
+	return 0;
+}
