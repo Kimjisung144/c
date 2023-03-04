@@ -1,0 +1,13 @@
+//
+#include <stdio.h>
+int main()
+{
+	float x, y,z;
+	printf("거리입력하시오"); // 
+	scanf_s("%f",&x); //각각 입력
+	printf("각도입력하시오"); // 
+	scanf_s("%f", &y); //각각 입력
+	z = (y / 180) * 3.141592;
+	printf("지구의 반지름은 %f", x / z);
+	return 0;
+}
