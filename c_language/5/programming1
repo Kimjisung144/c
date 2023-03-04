@@ -6,6 +6,6 @@ int main()
 	int a, b;
 	printf("정수하나 입력하고 띄어쓰기 한 뒤 정수 하나더 입력해주세요:");
 	scanf_s("%d %d", &a, &b);
-	printf("몫은 %.3f 나머지는%d", (float)a / b, a % b);
+	printf("몫은 %.3f 나머지는%d", (float)a / b, a % b); //몫은 실수형태로 나올수있기에 실수형으로 변환하고 나머지는 정수로 나오기에 정수형으로 두기
 	return 0;
 }
