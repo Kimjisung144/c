@@ -6,7 +6,7 @@ int main()
 	int a,b,c,max; // 3개의 정수,최댓값저장용1개
 	printf("3개의 정수를 입력하세요 (각각 숫자뒤에 띄어쓰기 해주세요)");
 	scanf_s("%d %d %d", &a, &b, &c);
-	a > b ? max = a : max = b;// 참이면 max에 a가 들어가고 거짓이면 max에 b가 들어간다.
+	a > b ? max = a : max = b;// 참이면 max에 a가 들어가고 거짓이면 max에 b가 들어간다. (?: 조건연산자) 
 	max > c ? max = max : max = c; // 참이면 max에 max들어가고 거짓이면max에 c가 들어간다.
 	printf("3개의 정수중 가장큰 정수는 %d입니다.", max); // 최댓값 출력
 	return 0;
