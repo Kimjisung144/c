@@ -1,0 +1,31 @@
+#include<stdio.h>
+
+int main() {
+	char a, b, c, d;
+
+	unsigned int x;
+
+	printf("첫번째 문자를 입력하시오: ");
+
+	scanf_s("%c", &a);
+	x = a;
+	getchar();
+
+	printf("두번째 문자를 입력하시오: ");
+	scanf_s("%c", &b);
+	x = b << 8 | x; //시프트가 먼저 계산되고 비트or연산자가 나중에 계산됨 shift는 5순위, bit or은 10순위
+	getchar();
+  
+	printf("세번째 문자를 입력하시오: ");
+	scanf_s("%c", &c);
+	x = c << 16 | x;
+	getchar();
+  
+	printf("네번째 문자를 입력하시오: ");
+	scanf_s("%c", &d);
+	x = d << 24 | x;
+	getchar();
+
+	printf("결과값 %x", x);
+  return0;
+}
