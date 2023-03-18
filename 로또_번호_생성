@@ -4,42 +4,76 @@
 
 int main()
 {
-	int list[6];//6개 저장
+	int a;
+	int b; // 잘나오는 숫자 리스트 위치 랜덤값 
+	int list[6]; //6개 저장
+	int good_list[10] = {34,43,27,17,12,13,1,33,39,20};
 	int bin = 0;; //리스트 위치 바꾸기 위한 변수
 	int count = 0;
 	srand(time(NULL)); // 난수 초기화
-	for (int i = 0; i < 6; i++) // 10회 반복
+	while (1)
 	{
-		goal:
-		list[i] = rand() % 46; // 0 ~ 45 사이의 숫자를 뽑아서 random 변수에 저장
-		if (list[i] == 0)//다시 랜덤값 받기 위해 가기
+		printf("일반 랜덤을 원하시면 1를 입력하시고 잘나왔던 숫자를 일반랜덤과 섞는것을 원하시면 2를 입력해주세요:");
+		scanf_s("%d", &a);
+		switch (a)
 		{
-			goto goal;  // 만약 랜덤값이 0나오면 1로 바꾸기
-			break;	
-		}
-		for (int j = 0; j < i; j++)
-		{
-			if (list[i] == list[j]) // 값은 번호가 나오면 안되기에 방지하는 if문
+		case 1:
+			for (int i = 0; i < 6; i++) // 10회 반복
 			{
-				goto goal; // 다시 돌아가
-				break;
+			goal:
+				list[i] = rand() % 46; // 0 ~ 45 사이의 숫자를 뽑아서 random 변수에 저장
+				if (list[i] == 0) //다시 랜덤값 받기 위해 가기
+				{
+					goto goal;  // 만약 랜덤값이 0나오면 1로 바꾸기
+				}
+				for (int j = 0; j < i; j++)
+				{
+					if (list[i] == list[j]) // 값은 번호가 나오면 안되기에 방지하는 if문
+					{
+						goto goal; // 다시 돌아가
+					}
+				}
 			}
-		}
-	}
-	for (int z = 0; z < 6; z++)
-	{
-		count = 0;
-		for (int a = 0; a < 6; a++)
-		{
-			if (list[z + count] > list[a])
+			break;
+		case 2:
+			for (int i = 0; i < 2; i++)
 			{
-				bin = list[z + count];
-				list[z + count] = list[a];
-				list[a] = bin;
-				bin = 0;
-				count++;
+			re:
+				b = rand() % 11; // 0 ~ 10 사이의 숫자를 뽑아서 random 변수에 저장
+				list[i] = good_list[b];
+				if (list[i] == 0)
+				{
+					goto re;
+				}
+				for (int j = 0; j < i; j++)
+				{
+					if (list[i] == list[j]) // 값은 번호가 나오면 안되기에 방지하는 if문
+					{
+						goto re; // 다시 돌아가
+					}
+				}
 			}
+			for (int i = 2; i <= 5; i++)
+			{
+			te:
+				list[i] = rand() % 46; // 0 ~ 46 사이의 숫자를 뽑아서 random 변수에 저장
+				if (list[i] == 0)
+				{
+					goto te;
+				}
+				for (int j = 0; j < i; j++)
+				{
+					if (list[i] == list[j]) // 값은 번호가 나오면 안되기에 방지하는 if문
+					{
+						goto te; // 다시 돌아가
+					}
+				}
+			}
+			break;
+		default:
+			break;
 		}
+	break;
 	}
 	printf("결과 값은:");
 	for (int m = 0; m < 6; m++)
