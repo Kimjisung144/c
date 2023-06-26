@@ -2,10 +2,12 @@
 
 int main()
 {
-	int a, b, c;
+	int a, b, c, aa, bb, cc;
 	printf("a, b, c 길이를 입력해주세요:");
 	scanf_s("%d %d %d", &a, &b, &c);
-	if ((a + b) > c && (b + c) > a && (a + c) > b)
+	printf("a, b, c 각의 크기를 입력해주세요:");
+	scanf_s("%d %d %d", &aa, &bb, &cc);
+	if ((a + b) > c && (b + c) > a && (a + c) > b && (aa + bb + cc) == 180)
 	{
 		printf("삼각형 맞아요");
 	}else {
