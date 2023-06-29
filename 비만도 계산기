@@ -1,0 +1,37 @@
+#include<stdio.h>
+int main()
+{
+	float h, w, bmi;
+
+	printf("키(m)와 체중(kg)을 입력해주세요:");
+	scanf_s("%f %f", &h, &w);
+
+	bmi = w / (h * h);
+
+	if (bmi < 18.5)
+	{
+		printf("저체중이십니다.\n");
+	}
+	else if (bmi >= 18.5 && bmi <= 22.9)
+	{
+		printf("정상체중이십니다.\n");
+	}
+	else if (bmi >= 23.0 && bmi <= 24.0)
+	{
+		printf("과체중이십니다.\n");
+	}
+	else if (bmi >= 25.0 && bmi <= 29.9)
+	{
+		printf("경도비만이십니다.\n");
+	}
+	else if (bmi >= 30.0 && bmi <= 34.9)
+	{
+		printf("중증비만이십니다.\n");
+	}
+	else if (bmi >= 35.0)
+	{
+		printf("고도비만이십니다.\n");
+	}
+	printf("저체중 > 정상체중 >과체중 >경도비만 > 중증비만 > 고도비만");
+	return 0;
+}
