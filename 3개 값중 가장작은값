@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main()
+{
+	int first, second, three, min;
+
+	printf("숫자 3개 입력해주세요:");
+	scanf_s("%d %d %d", &first, &second, &three);
+
+	if (first >= second){
+		min = second;
+	}else if (first < second){
+		min = first;
+	}
+	if (min > three)
+	{
+		min = three;
+	}
+	printf("가장 작은 값은 %d", min);
+	return 0;
+}
