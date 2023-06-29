@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+	int choose, computer;
+
+	printf("가위 =0, 바위 =1, 보=2 중 하나를 입력해주세요:");
+	scanf_s("%d",&choose);
+	computer = rand() % 3; // 0이면 가위, 1이면 바위, 2면 보
+
+	if (choose == 0 && computer == 0){
+		printf("사용자 = 가위 컴퓨터 가위\n비겼습니다.");
+	}else if (choose == 0 && computer == 1){
+		printf("사용자 = 가위 컴퓨터 = 바위\n컴퓨터가 이겼습니다.");
+	}else if (choose == 0 && computer == 2) {
+		printf("사용자 = 가위 컴퓨터 = 보\n사용자가 이겼습니다.");
+	}else if (choose == 1 && computer == 0) {
+		printf("사용자 = 바위 컴퓨터 = 가위\n사용자가 이겼습니다.");
+	}else if (choose == 1 && computer == 1) {
+		printf("사용자 = 바위 컴퓨터 = 바위\n비겼습니다.");
+	}else if (choose == 1 && computer == 2) {
+		printf("사용자 = 바위 컴퓨터 = 보\n컴퓨터가 이겼습니다.");
+	}else if (choose == 2 && computer == 0) {
+		printf("사용자 = 보 컴퓨터 = 가위\n컴퓨터가 이겼습니다.");
+	}else if (choose == 2 && computer == 1) {
+		printf("사용자 = 보 컴퓨터 = 바위\n사용자가 이겼습니다.");
+	}else if (choose == 2 && computer == 2) {
+		printf("사용자 = 보 컴퓨터 = 보\n비겼습니다.");
+	}else {
+		printf("오류발생");
+	}
+	return 0;
+}
