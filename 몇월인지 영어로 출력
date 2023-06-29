@@ -1,0 +1,49 @@
+#include<stdio.h>
+int main()
+{
+	int mon;
+
+	printf("월 번호를 입력하시오:");
+	scanf_s("%d",&mon);
+	
+	switch (mon)
+	{
+		case 1:
+			printf("January / Jan.");
+			break;
+		case 2:
+			printf("February / Feb.");
+			break;
+		case 3:
+			printf("March / Mar.");
+			break;
+		case 4:
+			printf("April / Apr.");
+			break;
+		case 5:
+			printf("May / May.");
+			break;
+		case 6:
+			printf("June / Jun.");
+			break;
+		case 7:
+			printf("July / Jul.");
+			break;
+		case 8:
+			printf("August / Aug.");
+			break;
+		case 9:
+			printf("September/ Sep.");
+			break;
+		case 10:
+			printf("October / Oct.");
+			break;
+		case 11:
+			printf("November / Nov.");
+			break;
+		case 12:
+			printf("December / Dec.");
+			break;
+	}
+	return 0;
+}
