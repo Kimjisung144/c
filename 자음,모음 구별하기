@@ -1,0 +1,26 @@
+#include<stdio.h>
+
+int main()
+{
+	char za[14] = { 'ㄱ','ㄴ','ㄷ','ㄹ','ㅁ','ㅂ','ㅅ','ㅇ','ㅈ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ' };
+	char mo[10] = { 'ㅏ','ㅑ','ㅓ','ㅕ','ㅗ','ㅛ','ㅜ','ㅠ','ㅡ','ㅣ' };
+	char find;
+	printf("문자를 입력하시오:");
+	scanf_s("%c", &find);
+
+	for (int m = 0; m < 14; m++)
+	{
+		if (find == mo[m])
+		{
+			printf("자음 입니다.");
+		}
+	}
+	for (int z = 0; z < 10; z++)
+	{
+		if (find == za[z])
+		{
+			printf("모음 입니다.");
+		}
+	}
+	return 0;
+}
