@@ -1,0 +1,19 @@
+//키가 140cm이상이고 나이가 10살이상 만이 놀이공원 로러코스터를 탈수있다.
+
+#include<stdio.h>
+int main()
+{
+	int height, age;
+
+	printf("키를 입력해주세요:");
+	scanf_s("%d",&height);
+
+	printf("나이를 입력해주세요:");
+	scanf_s("%d", &age);
+
+	if (height >=145 && age >= 10){
+		printf("타도 좋습니다.");
+	}else {
+		printf("죄송합니다. 못타십니다.");
+	}
+	return 0;
