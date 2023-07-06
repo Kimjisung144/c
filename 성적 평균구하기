@@ -1,0 +1,21 @@
+#include<stdio.h>
+
+int main()
+{
+	int r = 1; // while문 제어용
+	int sum = 0; // 평균구하기위한 합
+	float ser = 0;
+	while (r >= 0) {
+		printf("성적을 입력하시오(그만 하고 싶으면 성적에 -1:");
+		scanf_s("%d", &r);
+
+		if (r >= 0)
+		{
+			sum = sum + r;
+			ser++;
+		}
+	}
+	printf("***********************************************************\n");
+	printf("평균:%f", sum / ser);
+	return 0;
+}
