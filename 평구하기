@@ -4,7 +4,7 @@ int main() {
 	int swi = 0;
 	const float p = 3.3058; // 1평은 3.3058m^2이다.
 	float pung, m2;
-	printf("1: 평에서 제곱미터(m^2)으로 계산\n2:제곱미터(m^2)에서 평으로 계산\n 숫자를 입력해주세요:");
+	printf("1: 평에서 제곱미터(m^2)으로 계산\n2: 제곱미터(m^2)에서 평으로 계산\n 숫자를 입력해주세요:");
 	scanf_s("%d", &swi);
 	switch (swi)
 	{
@@ -12,13 +12,13 @@ int main() {
 			printf("평을 입력하세요:");
 			scanf_s("%f", &pung);
 			m2 = pung * p;
-			printf("%f m^2입니다.", m2);
+			printf("%f평은 %f m^2입니다.", pung,m2);
 			break;
 		case 2:
 			printf("제곱미터을 입력하세요:");
 			scanf_s("%f", & m2);
 			pung = m2 / p;
-			printf("%f 평입니다.", pung);
+			printf("%f제곱미터는 %f 평입니다.",m2, pung);
 			break;
 	default:
 		printf("잘못입력하셨습니다.");
