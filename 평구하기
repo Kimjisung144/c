@@ -20,9 +20,9 @@ int main() {
 			pung = m2 / p;
 			printf("%f제곱미터는 %f 평입니다.",m2, pung);
 			break;
-	default:
-		printf("잘못입력하셨습니다.");
-		break;
+		default:
+			printf("잘못입력하셨습니다.");
+			break;
 	}
 	return 0;
 }
