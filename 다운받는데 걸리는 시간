@@ -1,0 +1,25 @@
+#include<stdio.h>
+#include <math.h>
+
+int main(void)
+{
+	const int change = 1024; //GB를 MB로 변환
+	double speed; // 다운 속도
+	double stage; // 총용량
+	double t; //다운완료까지 남은 시간
+	double d,h,m,s; // 분,초 표시
+
+	printf("현재 인터넷 다운로드 몇MB/S인지 입력해주세요:");
+	scanf_s("%lf", &speed);
+	printf("다운받아야 하는 총용량(단위: GB)을 입력해주세요:");
+	scanf_s("%lf", &stage);
+
+	stage = stage * change;
+	t = stage / speed; //걸리는 시간 초단위로 변환 
+	d = t / 86400; //60*60*24 초를 분으로 분에서 시로 시에서 일로
+	h = (int)(t / (60*60)); //초를 시간으로 변환
+	m = (int)((t/60) - (h * 60)); // 시를 뺸 나머지 분 표현
+	s = t - ((h * 3600) + (m * 60));
+	printf("%.0lf일 %.0lf시간 %2.0lf분 %2.0lf초 남았다. ", d, h, m, s); //정수 2자리까지 출력
+	return 0;
+}
