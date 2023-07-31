@@ -1,0 +1,145 @@
+#include<stdio.h>
+
+void choose()
+{
+	printf("1. 할인율 구하기\n");
+	printf("2. 할인이 된 가격 구하기\n");
+	printf("3. 할인되기전 가격구하기\n");
+	printf("4. 인상율 구하기\n");
+	printf("5. 인상된 가격 구하기\n");
+	printf("6. 인상되기전 가격 구하기\n");
+	printf("원하는 경우에 숫자를 입력하시오:");
+}
+
+void cho1() {
+	float a_cost; // 할인된 후 가격
+	float b_cost; // 할인되기전 가격
+	float dis; // 할인율
+
+	printf("할인되기전 가격을 입력해주세요:");
+	scanf_s("%f", &b_cost);
+	printf("할인된 후 가격을 입력해주세요:");
+	scanf_s("%f", &a_cost);
+
+	dis = b_cost - a_cost;
+	dis = dis / b_cost;
+	dis = dis * 100;
+
+	printf("할인율은 %3.2f%%입니다.", dis);
+}
+
+void cho2() {
+	float a_cost; //할인된 후 가격
+	float b_cost; // 할인되기전 가격
+	float dis; // 할인율
+
+	printf("할인되기전 가격을 입력해주세요:");
+	scanf_s("%f", &b_cost);
+	printf("할인율을 입력해주세요:");
+	scanf_s("%f", &dis);
+
+	a_cost = b_cost / 100;
+	a_cost = a_cost * dis;
+	a_cost = b_cost - a_cost;
+
+	printf("할인된 가격은 %.0f입니다.", a_cost);
+}
+
+void cho3() {
+	float a_cost; //할인된 후 가격
+	float b_cost; // 할인되기전 가격
+	float dis; // 할인율
+	float value;
+
+	printf("할인된 가격을 입력해주세요:");
+	scanf_s("%f", &a_cost);
+	printf("할인율을 입력해주세요:");
+	scanf_s("%f", &dis);
+
+	b_cost  = a_cost * (100 / dis);
+	value =  (100 / dis)-1;
+	value = value / (100 / dis);
+	b_cost = b_cost / value;
+
+	printf("할인전 가격은 %.0f입니다.", b_cost);
+}
+
+void cho4() {
+	float a_cost; //인상 후 가격
+	float b_cost; // 인상 되기전 가격
+	float dis; // 인상율
+	float value;
+
+	printf("인상 전 가격을 입력해주세요:");
+	scanf_s("%f", &b_cost);
+	printf("인상 후 가격을 입력해주세요:");
+	scanf_s("%f", &a_cost);
+
+	dis = a_cost - b_cost;
+	dis = dis / b_cost;
+
+	printf("인상률 %.2f%%입니다.", dis*100);
+}
+
+
+void cho5() {
+	float a_cost; //인상 후 가격
+	float b_cost; // 인상 되기전 가격
+	float dis; // 인상률
+	float value;
+
+	printf("인상 전 가격을 입력해주세요:");
+	scanf_s("%f", &b_cost);
+	printf("인상률을 입력해주세요:");
+	scanf_s("%f", &dis);
+
+	a_cost = b_cost * (dis / 100);
+	a_cost = b_cost + a_cost;
+	printf("인상된 가격은 %.0f입니다.", a_cost);
+}
+
+void cho6() {
+	float a_cost; //인상 후 가격
+	float b_cost; // 인상 되기전 가격
+	float dis; // 인상률
+	float value;
+
+	printf("인상된 가격을 입력해주세요:");
+	scanf_s("%f", &a_cost);
+	printf("인상률을 입력해주세요:");
+	scanf_s("%f", &dis);
+
+	value = (100 / dis)+1;
+	b_cost = (100 / dis) * a_cost;
+	b_cost = b_cost / value;
+	
+	printf("인상되기전 가격은 %.0f입니다.", b_cost);
+}
+
+int main(void)
+{
+	int cho;
+	choose();
+	scanf_s("%d", &cho);
+	switch (cho) {
+		case 1:
+			 cho1();
+			 break;
+		case 2:
+			cho2();
+			break;
+		case 3:
+			cho3();
+			break;
+		case 4:
+			cho4();
+			break;
+		case 5:
+			cho5();
+			break;
+		case 6:
+			cho6();
+			break;
+	}
+	return 0;
+}
