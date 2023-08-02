@@ -15,7 +15,7 @@
 
 int main(void)
 {
-	const double g = 9.80665; //중력 가속도 9.80665 m / s2
+	const double g = 9.80665; //중력 가속도 상수 = 9.80665 m / s^2
 	double dis; //건물간의 거리
 	double h; //건물간의 높이차
 	double t; // 가는데 걸리는 시간(second)
