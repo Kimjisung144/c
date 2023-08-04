@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include <math.h>
+
+float h_input(int swi)
+{
+	int apt_h;
+	float h;
+	switch (swi)
+	{
+		case 1:
+			printf("아파트 몇층에서 투신하였는가?");
+			scanf_s("%d", &apt_h); //사용자의 몸무게 입력받기
+			h = (apt_h -1)* 2.6 + 1.2;
+			break;
+
+		case 2:
+			printf("높이가 몇미터 입니까?");
+			scanf_s("%d", &h); //사용자의 몸무게 입력받기
+			break;
+
+		default:
+			printf("입력안됨");
+	return h;
+	}
+}
+int main(void)
+{
+	float kg;//사용자의 질량(몸무게)
+	const double g = 9.80665; // 중력 가속도 상수
+	float hight; //높이
+	float n; //무게
+	float j; // 에너지(일)
+	float ms; //속력
+	float s; // 걸리는 시간
+	int swi; // switch를 위한 제어 변수
+
+	printf("높이를 아파트 층으로 계산하시려면 1를 입력해주세요\n높이를 미터단위로 계산하시려면 2를 입력해주세요:");
+	scanf_s("%d", &swi); //사용자의 몸무게 입력받기
+
+	printf("현재 몸무게(kg)를 입력하세요:");
+	scanf_s("%f", &kg); //사용자의 몸무게 입력받기
+
+	hight = h_input(swi);
+	n = (kg * g); // 무게 공식
+	j = hight * (kg * g); // 위치 에너지 공식 =  무게 = 질량 * 중력가속도 상수
+	ms = (2 * j) / kg;///운동에너지 공식 j = (1/2) * 질량 * (m/s)^2
+	ms = sqrt(ms); //제곱근 구하기
+	s = hight / ms;// 평균속력 공식 = m/s
+	printf("\n결과\n몸무게: %.1fkg\n높이: %.2fm\n에너지(일): %.5fJ \n평균속력: %fm/s\n바닥까지 걸린시간: %.3f초",kg,hight,j,ms,s);
+	return 0;
+}
