@@ -1,0 +1,18 @@
+//유클리드 알고리즘
+#include <stdio.h>
+int main(void)
+{
+	int x, y, z; // x는 제일큰값, y작은값 z는 x%y의 값
+
+	printf("최대공약수 구할 큰 값과 작은값을 입력하시오(큰값, 작은값):");
+	scanf_s("%d %d", &x, &y);
+
+	while (y > 0)
+	{
+		z = x % y;
+		x = y;
+		y = z;
+	}
+	printf("최대 공약수는 %d이다.", x);
+	return 0;
+}
