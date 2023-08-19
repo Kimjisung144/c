@@ -1,0 +1,26 @@
+//반감기
+#include <stdio.h>
+int main(void)
+{
+	float z;
+	float y; //x는 년차, y는 물질의 양 10분의 1 기준값, z는 그때 년차에 물질의 양
+	float x = 0;
+	float t;
+	printf("반감기를 입력하세요(단위 년):");\
+	scanf_s("%f", &t);
+
+	printf("물질의 양:");
+	scanf_s("%f", &z);
+
+	y = z / 10.0;
+
+	while (z > y)
+	{
+		x = x + t; // x값에 10년을 더한다. 
+		z = z / 2.0; // 10년이 지났기에 반값으로 만든다.
+		printf("%.1f 년차 물질의양은 %.1f\n", x, z);	
+	}
+
+	printf("10분의 1로 되는데 %.1f년 걸린다.", x);
+	return 0;
+}
