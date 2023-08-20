@@ -1,0 +1,29 @@
+//자산 목표 복리계산
+#include <stdio.h>
+int main(void)
+{
+	float asset; //초기 자산 금액
+	float fin; //최종 자산 목표 금액
+	float per;
+	int count = 0; //연차 카운트
+	printf("현재 자산 금액을 입력해주세요:");
+	scanf_s("%f", &asset);
+
+	printf("최종 목표 금액을 입력해주세요:");
+	scanf_s("%f", &fin);
+
+	printf("연 몇퍼센트 수익으로 계산하시겠습니까?:");
+	scanf_s("%f", &per);
+
+	per = per / 100;
+	while (asset <= fin)
+	{
+		asset = asset + (asset *per);
+		count++;
+		printf("%d 년차 현재 자산 %.2f\n",count,asset);
+	}
+	printf("%d년 걸립니다.", count);
+
+
+	return 0;
+}
