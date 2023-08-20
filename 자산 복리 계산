@@ -23,7 +23,5 @@ int main(void)
 		printf("%d 년차 현재 자산 %.2f\n",count,asset);
 	}
 	printf("%d년 걸립니다.", count);
-
-
 	return 0;
 }
