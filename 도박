@@ -1,0 +1,55 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(void)
+{
+	int first;//초기자금
+	int goal = 250;
+	int infi; //100회 도전하기 위한 돈 
+	int win_count = 0; // 100번중 목표 금액에 성공 세보는 변수
+	int win_value; // 한판당 이길시 배팅금액의 몇배 이익
+	int value; //배팅금액
+	double persent; //한판당 이길 확률
+	double random; // 이길 확률
+
+	printf("초기 자금은 얼마입니까?:");
+	scanf_s("%d", &first);
+
+	printf("목표 금액은 얼마입니까?:");
+	scanf_s("%d", &goal);
+
+	printf("도박 한판당 배팅금액:");
+	scanf_s("%d", &value);
+
+	printf("도박 한판당 이길시 배팅금액의 몇배를 얻습니까?:");
+	scanf_s("%d", &win_value);
+
+	printf("도박 한판당 이길확률");
+	scanf_s("%lf", &persent);
+
+	srand(time(NULL));
+
+	for (int i = 0; i < 100; i++)
+	{	
+		infi = first;
+		while (infi >= 1 && infi <= goal)
+		{
+			random = (double)rand() / RAND_MAX; // 게임 결과 랜덤값 생성
+			if (random <= (persent/100)) 
+			{
+				infi = infi + (value * win_value);
+			}
+			else
+			{
+				infi = infi - value;
+			}
+		}
+		if (infi > goal)
+		{
+			win_count++;
+		}
+	}
+	printf("100번 도박장 들어가서 목표금액 달성 하고 나올확률 %d", win_count);
+	return 0;
+}
