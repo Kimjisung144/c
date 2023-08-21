@@ -1,0 +1,41 @@
+#include <stdio.h>
+
+int main(void)
+{
+	char a;
+	int f, s;
+	printf("********************\n");
+	printf("A-----add\n");
+	printf("S-----Subtract\n");
+	printf("M-----Multiply\n");
+	printf("D-----Divide\n");
+	printf("Q-----Quit\n");
+	printf("********************\n");
+	while (1)
+	{
+		printf("연산을 입력하시오:");
+		scanf_s("%c", &a);
+		if (a == 'Q')
+		{
+		break;
+		}
+		printf("두 수를 공백으로 분리하여 입력하시오:");
+		scanf_s("%d %d",&f, &s);
+		if (a == 'A')
+		{
+			printf("%d\n", f + s);
+		}else if (a == 'S')
+		{
+			printf("%d\n", f - s);
+		}
+		else if (a == 'M')
+		{
+			printf("%d\n", f * s);
+		}
+		else if (a == 'D')
+		{
+			printf("%.2f\n", (float)f / s);
+		}
+	}
+	return 0;
+}
