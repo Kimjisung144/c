@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int a;// 최대 구하는 값
+	printf("소수를 어디까지 구하실건가요?:");
+	scanf_s("%d", &a);
+	for (int i = 2; i <= a; i++)
+	{
+		for (int j = 2; j <= i; j++)
+		{
+			if (j == i)
+			{
+				printf("%d ", i);
+			}
+			else if (i % j == 0)
+			{
+				break;
+			}	
+		}
+	}
+	return 0;
+}
