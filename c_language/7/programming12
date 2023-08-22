@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int a;
+	int f1 = 0;
+	int f2 = 1;
+	int temp;
+
+	printf("n의 값을 입력하시오:");
+	scanf_s("%d", &a);
+	printf("%d,%d,", f1, f2);
+	for (int i = 3; i <= a; i++)
+	{
+		temp = f2;
+		f2 = f1 + f2;
+		f1 = temp;
+		printf("%d,", f2);
+	}
+	return 0;
+}
