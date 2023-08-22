@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int i;
+	int j = 10;
+	int sum = 0;
+
+	printf("정수를 입력하시오:");
+	scanf_s("%d", &i);
+
+	do {
+		i = i - sum; // 현재 자리 숫자만 두고 아랫자리는 0으로 만들기 위해  아랫자리 숫자 빼기
+		sum =i % j;// 현재 자리 숫자부터 1의 자리까지 추출
+		printf("%d", sum/(j/10)); //현재 자리만 출력
+		j = j * 10; // 다음자리를 위해 단위 올리기
+	}while (sum<100000); 
+	return 0;
+}
