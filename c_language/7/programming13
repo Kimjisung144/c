@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int n;
+	int r;
+	int mu = 1;
+
+	printf("nPr\n");
+	printf("n의 값:");
+	scanf_s("%d", &n);
+	printf("r의 값:");
+	scanf_s("%d", &r);
+
+
+	for (int i = n; i > n - r; i--)
+	{
+		mu = mu * i;
+	}
+
+	printf("순열의 값은 %d이다", mu);
+	return 0;
+}
