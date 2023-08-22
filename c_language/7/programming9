@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int a=0;// 최대 구하는 값
+	int sum = 0;
+	while (1)
+	{
+		if (sum > 10000)
+		{
+			sum = sum - a;
+			a--;
+			break;
+		}
+		a++;//a증가
+		sum = sum + a;//합계에 a더하기
+	}
+	printf("1부터 %d까지 의 합이 %d 입니다.", a, sum);
+	return 0;
+}
