@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void)
+{
+	float r;//밑
+	float n;//지수
+	float m=1;
+	printf("실수의 값을 입력하시오:");
+	scanf_s("%f", &r);
+	printf("거듭제곱횟수를 입력하시오:");
+	scanf_s("%f", &n);
+	for (int i = 1; i <= n; i++)
+	{
+		m = m * r;
+	}
+	printf("결과값은 %f 입니다.",m);
+	return 0;
+}
