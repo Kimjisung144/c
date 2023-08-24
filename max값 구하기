@@ -2,8 +2,6 @@
 int max_function(int ,int);
 
 int main() {
-
-
 	int a, b; // a는 첫번째 숫자, b는 두번째 숫자
 	int max; // 최댓값
 	scanf_s("%d %d", &a, &b);
