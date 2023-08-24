@@ -1,0 +1,36 @@
+//조합
+#include <stdio.h>
+
+int inter()
+{
+	int value = 0;
+	scanf_s("%d", &value);
+	return value;
+}
+
+int pact(int so)
+{
+	int a = 1;
+	for (int i = 1; i <= so; i++)
+	{
+		a = a * i;
+	}
+	return a;
+}
+
+
+int main() {
+	int n, r;
+	int nsum, rsum;
+
+	printf("nCr\n");
+	printf("n의 값을 입력하시오");
+	n = inter();
+	nsum = pact(n);
+
+	printf("r의 값을 입력하시오");
+	r = inter();
+	rsum = pact(r);
+	printf("%d", nsum / (pact(n - r) * rsum));
+	return 0;
+}
