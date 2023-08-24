@@ -1,24 +1,17 @@
 #include <stdio.h>
-int happyBirthday(int ba)
+int factorial(int goal)
 {
-	int sum = 1;
-	for (int i = 1; i <= ba; i++)
+	int mul = 1;
+	for (int i = goal; i > 0; --i)
 	{
-		sum = sum * i;
+		mul = mul * i;
 	}
-	return sum;
+	return mul;
 }
-
-int as()
-{
-	int inpu;
-	printf("원하는 숫자 팩토리얼을 입력하시오:");
-	scanf_s("%d", &inpu);
-	return inpu;
-}
-int main()
-{
-	int input_a = as();
-	printf("%d", happyBirthday(input_a));
+int main() {
+	int a;
+	printf("알고싶은 팩토리얼의 값은?");
+	scanf_s("%d", &a);
+	printf("%d",factorial(a));
 	return 0;
 }
