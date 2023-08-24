@@ -1,6 +1,12 @@
 #include <stdio.h>
-int max_function(int ,int);
-
+int max_function(int first, int second)
+{
+	if (first >= second){
+		return first;
+	}else {
+		return second;
+	}
+}
 int main() {
 	int a, b; // a는 첫번째 숫자, b는 두번째 숫자
 	int max; // 최댓값
@@ -8,16 +14,4 @@ int main() {
 	max = max_function(a,b);
 	printf("%d", max);
 	return 0;
-}
-
-int max_function(int first, int second)
-{
-	if (first >= second)
-	{
-		return first;
-	}
-	else 
-	{
-		return second;
-	}
 }
