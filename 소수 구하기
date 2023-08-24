@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int inter()
+{
+	int value = 0;
+	scanf_s("%d", &value);
+	return value;
+}
+
+void pact(int so)
+{
+	int count = 0;
+	for (int i = 2; i < so; i++)
+	{
+		if (so % i == 0)
+		{
+			printf("%d는 소수가 아닙니다.", so);
+			count++;
+			break;
+		}
+	}
+	if (count == 0)
+	{
+		printf("%d는 소수입니다.", so);
+	}
+	return;
+}
+
+int main() {
+	int a;
+	pact(inter());
+	return 0;
+}
