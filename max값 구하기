@@ -1,37 +1,25 @@
 #include <stdio.h>
+int max_function(int ,int);
 
 int main() {
-	int a, b, c;
-	int max;
-	scanf("%d %d %d", &a, &b, &c);
-	if (a >= b)
-	{
-		max = a;
-		if (max < c)
-		{
-			max = c;
-		}
-		else 
-		{
-			max = max;
-		}
-	}
-	else if (a < b)
-	{
-		max = b;
-		if (max < c)
-		{
-			max = c;
-		}
-		else
-		{
-			max = max;
-		}
-	}
-	else
-	{
-		printf("잘못되었습니다.");
-	}
+
+
+	int a, b; // a는 첫번째 숫자, b는 두번째 숫자
+	int max; // 최댓값
+	scanf_s("%d %d", &a, &b);
+	max = max_function(a,b);
 	printf("%d", max);
 	return 0;
+}
+
+int max_function(int first, int second)
+{
+	if (first >= second)
+	{
+		return first;
+	}
+	else 
+	{
+		return second;
+	}
 }
