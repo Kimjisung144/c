@@ -1,0 +1,71 @@
+#include <stdio.h>
+#include <time.h> // 시트값
+#include <stdlib.h> // rand함수 사용
+#include <windows.h> // sleep 함수 사용
+
+void track(int val)
+{
+	for (int i = 1; i <= 200; i++)
+	{
+		printf("-"); //레이싱 경계선 표현
+		if (i == 200)
+		{
+			printf("|"); // 결승선 표현
+			break;
+		}
+	}
+	printf("\n");
+}
+
+void cal(int distance ,int player)
+{
+
+	printf("player%d\n", player);
+
+	track(distance);
+	for (int i = 1; i <= distance - 1; i++)
+	{
+		printf(" "); // 이동거리 투명화
+	}
+	printf("ㅁ"); // 자동차 모형
+	printf("\n");
+	track(distance);
+}
+
+int main()
+{
+	int num1 = 0; // player1이 몇미터 갔는가
+	int num2 = 0; // player2이 몇미터 갔는가
+	int player1 = 1; //player1 식별 변수
+	int player2 = 2; //player2 식별 변수
+	int count1 = 0; // 몇초 경과표현하기 위한 변수
+
+	srand(time(NULL)); //랜덤 함수 seed값 
+
+	while (num1  < 200 && num2  < 200) // 플레이어 한명이라도 결승선에 도착하면 중지
+	{
+		count1 = count1 + 1; // 경과시간 증가
+		num1 = num1 + rand() % 10; // player1에 기존값에 0~10까지 랜덤수 더하기
+		num2 = num2 + rand() % 10; // player2에 기존값에 0~10까지 랜덤수 더하기
+
+		printf("%d초\n",count1); //경과시간 출력
+		printf("%d %dm\n", player1, num1);
+		cal(num1, player1);
+		printf("%d %dm\n", player2, num2);
+		cal(num2, player2);
+		printf("\n");
+
+		Sleep(1000);//1초 딜레이
+	}
+	if (num1 > num2)
+	{
+		printf("player1이 이겼습니다.");
+	}
+	else if (num1 < num2 )
+	{
+		printf("player2이 이겼습니다.");
+	}
+	else {
+		printf("무승부");
+	}
+}
