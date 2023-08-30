@@ -45,8 +45,8 @@ int main()
 	while (num1  < 200 && num2  < 200) // 플레이어 한명이라도 결승선에 도착하면 중지
 	{
 		count1 = count1 + 1; // 경과시간 증가
-		num1 = num1 + rand() % 10; // player1에 기존값에 0~10까지 랜덤수 더하기
-		num2 = num2 + rand() % 10; // player2에 기존값에 0~10까지 랜덤수 더하기
+		num1 = num1 + 1+(rand() % 10); // player1에 기존값에 1~10까지 랜덤수 더하기
+		num2 = num2 + 1+(rand() % 10); // player2에 기존값에 1~10까지 랜덤수 더하기
 
 		printf("%d초\n",count1); //경과시간 출력
 		printf("%d %dm\n", player1, num1);
