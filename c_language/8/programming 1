@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <math.h>
+
+double square(double aa)
+{
+	double value; // 제곱한 값 넣기
+	value = pow(aa, 2.0); // 입력받은 값 제곱하기
+	return value; // 리턴
+}
+int main()
+{
+	double a;
+	printf("정수를 입력하시오:");
+	scanf_s("%lf", &a);
+	printf("주어진 정수 %lf의 제고은 %f 입니다.",a,square(a));
+	return 0;
+}
