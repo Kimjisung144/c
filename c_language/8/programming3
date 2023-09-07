@@ -1,0 +1,16 @@
+#include <stdio.h>
+#define _USE_MATH_DEFINES // 파이를 사용
+#include <math.h>
+
+double cal_area(double radius)
+{
+	return radius*radius*M_PI; // 반지름* 반지름*파이 = 원의 넓이
+}
+int main()
+{
+	double radi; // 반지름 변수
+	printf("원의 반지름을 입력하시오:");
+	scanf_s("%lf", &radi); // 반지름 입력받기
+	printf("원의 면적은 %lf입니다.",cal_area(radi)); // 함수로 계산하기
+	return 0;
+}
