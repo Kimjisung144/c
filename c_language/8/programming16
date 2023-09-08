@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+double factorial(int); //함수원형 선언
+
+double factorial(int n)
+{
+	unsigned long long r = 1; // 팩토리얼 n값이 커질수록 int로는 감당이 안됨 그래서 long long을 씀
+	for (int j = 1; j <= n; j++)
+	{
+		r = r * j; // 예) 3*2*1
+	}
+	return r; // 팩토리얼 계산 값 리턴
+}
+
+int main() {
+	int n; // n값
+	double sum = 0; // 최종값
+	scanf_s("%d", &n); // n값 입력받기
+	sum = sum + 1; // 처음에 1더하기
+	for (int i = 1; i <= n; i++)
+	{
+		sum = sum + (double)(1.0/factorial(i)); // 1/n!구하기
+		printf("\n");
+	}
+	printf("%lf", sum);
+	return 0;
+}
