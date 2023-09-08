@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int round(double floating)
+{
+	return (int)(floating + 0.5);
+}
+
+int main()
+{
+	float f; // 연도 변수
+
+	printf("실수를 입력하시오:");
+	scanf_s("%f", &f);
+
+	printf("반올림한 값은 %d입니다.", round(f));
+	return 0;
+}
