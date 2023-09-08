@@ -1,0 +1,39 @@
+#include <stdio.h>
+int is_mull(char); // 입력창 안내를 위한 함수
+int is_multiple(int,int); // 배수인지 확인하는 함수
+
+int is_mull(int al)
+{
+	int value;
+	if (al == 1) // 1이면 첫번째
+	{
+		printf("첫번째 정수를 입력하시오:");
+	}
+	else // 1이 아니면 두번째
+	{
+		printf("두번째 정수를 입력하시오:");
+	}
+	scanf_s("%d", &value);
+	return value; // 입력한 값 리턴
+}
+
+int is_multiple(int i,int j)
+{
+	if (i % j == 0) // 배수인지 계산
+	{
+		return 1; // 배수가 맞으면 리턴 1
+	}
+	else 
+	{
+		return 0; // 배수가 아니면 리턴 0
+	}
+}
+
+int main()
+{
+	int a, b;
+	a = is_mull(1); // 안내창
+	b = is_mull(2); // 안내창
+	printf("%d는 %d의 %s", a, b, (is_multiple(a, b) > 0) ? "배수입니다." : "배수 아닙니다.");
+	return 0;
+}
