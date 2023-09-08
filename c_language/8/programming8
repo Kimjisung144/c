@@ -1,0 +1,22 @@
+#include <stdio.h>
+#define _USE_MATH_DEFINES
+#include <math.h>
+
+double sin_degree(double degree)
+{
+	double m; // 라디안
+	m = degree* (M_PI / 180.0);
+	return sin(m);
+		
+}
+
+int main()
+{
+	int money;// 돈
+
+	for (double i = 0.0; i <= 180.0; i = i + 10.0)
+	{
+		printf("sin( %lf )의 값은 %lf\n",i,sin_degree(i));
+	}
+	return 0;
+}
