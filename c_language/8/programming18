@@ -1,0 +1,101 @@
+#include <stdio.h>
+
+void menu(); //함수원형 선언
+
+void menu()
+{
+	printf("====================\n");
+	printf("MENU\n");
+	printf("====================\n");
+	printf("1. 덧셈\n");
+	printf("2. 뺄셈\n");
+	printf("3. 곱셈\n");
+	printf("4. 나눗셈\n");
+	printf("5. 나머지\n");
+	printf("원하는 메뉴를 선택하시오(1~5):\n");
+	return;
+}
+
+double input_number()
+{
+	double a;
+	printf("원하는숫자를 입력해주세요:");
+	scanf_s("%lf", &a);
+	return a;
+
+}
+
+double plus()
+{
+	double aa, bb;
+	aa = input_number();
+	bb = input_number();
+	return aa + bb;
+}
+
+double m()
+{
+	double aa, bb;
+	aa = input_number();
+	bb = input_number();
+	return aa - bb;
+}
+
+double g()
+{
+	double aa, bb;
+	aa = input_number();
+	bb = input_number();
+	return aa * bb;
+}
+
+double nam()
+{
+	double aa, bb;
+	aa = input_number();
+	bb = input_number();
+	return aa / bb;
+}
+
+double na()
+{
+	double aa, bb;
+	aa = input_number();
+	bb = input_number();
+	return (int)aa % (int)bb;
+}
+
+int main() {
+	int n; // n값
+	char c;
+	while (1)
+	{
+		menu();
+		scanf_s("%d", &n);
+		switch (n)
+		{
+			case 1:
+				printf("연산결과: %lf\n",plus());
+				break;
+			case 2:
+				printf("연산결과: %lf\n", m());
+				break;
+			case 3:
+				printf("연산결과: %lf\n", g());
+				break;
+			case 4:
+				printf("연산결과: %lf\n", nam());
+				break;
+			case 5:
+				printf("연산결과: %lf", na());
+				break;
+		}
+		printf("계속하시려면 y를 눌러주세요:");
+		scanf_s("%c", &c);
+		if (c != 'y')
+		{
+			break;
+		}
+	}
+	return 0;
+}
