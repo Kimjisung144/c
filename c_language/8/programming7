@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+double get_tex(int income)
+{
+	if (income < 1000)
+	{
+		return income * 0.08;
+	}
+	else
+	{
+		return income * 0.10;
+	}
+}
+
+int main()
+{
+	int money;
+
+	printf("소득을 입력하시오:");
+	scanf_s("%d", &money);
+
+	printf("소득세는 %lf입니다.", get_tex(money));
+	return 0;
+}
