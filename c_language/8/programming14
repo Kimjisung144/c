@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <math.h>
+
+void is_mull(int); // 입력창 안내를 위한 함수
+double is_multiple(double,double,double,double); // 배수인지 확인하는 함수
+
+void is_mull(int al)
+{
+	if (al == 1) // 1이면 첫번째
+	{
+		printf("첫번째 점의 좌표를 입력하시오:(x, y)");
+	}
+	else // 1이 아니면 두번째
+	{
+		printf("두번째 점의 좌표를 입력하시오:(x, y)");
+	}
+	return;
+}
+
+double is_multiple(double i,double j,double k,double l)
+{
+	double d;
+	d = sqrt(pow(i - k, 2) + pow(j - l, 2));
+	return d;
+}
+
+int main()
+{
+	double value1,value2, value3,value4;
+	is_mull(1); // 안내창
+	scanf_s("%lf %lf", &value1, &value2);
+	is_mull(2); // 안내창
+	scanf_s("%lf %lf", &value3, &value4);
+	printf("두점사이의 거리는 %lf입니다.", is_multiple(value1, value2, value3, value4));
+	return 0;
+}
