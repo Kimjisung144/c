@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+static int sum_count = 0;
+static int mul_count = 0;
+static int gom_count = 0;
+static int nua_count = 0;
+
+int cal(int a,char b,int c)
+{
+	if (b == '+')
+	{
+		sum_count++;
+		printf("덧셈은 총 %d번 실행되었습니다.", sum_count);
+		return a + b;
+	}
+	else if (b == '-')
+	{
+		mul_count++;
+		printf("뺄셈은 총 %d번 실행되었습니다.", mul_count);
+		return a - b;
+	}
+	else if (b == '*')
+	{
+		gom_count++;
+		printf("곱셈은 총 %d번 실행되었습니다.", gom_count);
+		return a * b;
+	}
+	else if (b == '/')
+	{
+		nua_count++;
+		printf("나눗셈은 총 %d번 실행되었습니다.", nua_count);
+		return a / b;
+	}
+	else 
+	{
+		printf("문제생김");
+	}
+}
+
+int main(void)
+{
+	int a,c; // 피연산자
+	char b; // 연산자 제어
+	int i = 0; // while문 제어
+
+	while(i < 3)
+	{
+		printf("연산을 입력하시오:");
+		scanf_s("%d%c%d", &a,&b,&c);
+		printf("연산결과:",cal(a,b,c));
+		i++;
+	}
+	return 0;
+}
