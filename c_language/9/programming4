@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int get_random()
+{
+	static int a = 0;
+	
+	if (a == 0)
+	{
+		srand(time(NULL));
+		a++;
+		return 0;
+	}
+	else 
+	{
+		return rand();
+	}
+}
+
+int main(void)
+{
+	int a;
+	for (int i = 0; i < 3; i++)
+	{
+		a = get_random();
+		if (a == 0)
+		{
+			printf("초기화 실행\n");
+		}
+		else {
+			printf("%d\n", a);
+		}
+	}
+	return 0;
+}
