@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int show_digit(int x)
+{
+	static int a = 1;
+	printf("%d ", x / (1000 / a));
+	x = x % (1000 / a);
+	a = a * 10;
+	if (x == 0)
+	{
+		return 0;
+	}
+	return show_digit(x);
+}
+
+int main(void)
+{
+	int a = 1234;
+	show_digit(a);
+	return 0;
+}
