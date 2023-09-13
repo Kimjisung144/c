@@ -3,53 +3,46 @@
 int show(int,int);
 int show_2(int);
 
-int show(int number,int c)
+int show(int number, int c) // number = 입력받은 숫자, c = 몇자리수인지
 {
-	static int a[10]; // 리턴 저장용
-	static int b = 10*(c-1); // 곱하기 용
-	static int i = 0; // 곱하기 용
-	
+	static int a[100]; // 숫자를 나누어서 배열에 넣기 위한 변수
+	int b = 1;
+	int i = 0;
 
-	a[i] = number / b;
-	
-	if (number / b < 0)
+	for (int j = 0; j < c-1; j++)
 	{
-		return 0;
+		b *= 10;
+	}
+	if (c >= 1)
+	{
+		return (number / b) + show(number % b, c - 1);
 	}
 	else
 	{
-		i++;
-		b /= 10;
-		return a[i] + show(number,c);
+		return 0;
 	}
-
-}
+} 
 
 int show_2(int number)
 {
-	int b = 1;
-	int count = 0;
-	while (1)
+	static int b = 1; // 자리수 구하기 위해 number를 나누는 피연산자
+	static int count = 0; // 몇자리인지 카운트 하고 저장용 변수
+	if (number / b > 0)
 	{
-		if (number / b > 0)
-		{
-			b*=10;
-			count++;
-		}
-		else
-		{
-			break;
-		}
+		b *= 10;
+		count++;
+		return show_2(number);
 	}
-	return count;
+	else {
+		return count;
+	}
 }
 
 int main(void)
 {
-	int a ;
+	int a; //입력받은 숫자
 	printf("정수를 입력하시오:");
 	scanf_s("%d", &a);
-
-	printf("%d",show(a, show_2(a)));
+	printf("자리수의 합:%d",show(a,show_2(a)));
 	return 0;
 }
