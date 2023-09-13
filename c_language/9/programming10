@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+double pac(int number);
+
+double pac(int number)
+{
+	if (number > 0)
+	{
+		return (1.0 / number) + pac(number - 1);
+	}
+	else
+	{
+		return 0;
+	}
+}
+
+int main(void)
+{
+	int a;
+	printf("n를 입력해주세요:");
+	scanf_s("%d", &a);
+	printf("%lf",pac(a));
+	return 0;
+}
