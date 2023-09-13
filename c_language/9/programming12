@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int fib(int n, int k)
+{
+	int c; // 다음 값
+	c = n + k; // 다음값 구하기
+	printf("%d ", n); // 피연산자 왼쪽 구하기
+	if(k < 100)
+	{
+		return fib(k, c); // 피연산자 오른쪽 , 결과값
+	}
+	else
+	{
+		return 0; //끝
+	}
+	
+
+}
+
+
+int main(void)
+{
+	fib(1,1);
+	return 0;
+}
