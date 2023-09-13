@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int show(int number)
+{
+	static int count = 0;
+	static int b = 1;
+	if (number / b <= 1)
+	{
+
+		return 1;
+	}
+	else 
+	{
+		b *= 10; // 10씩증가
+		return 1 + show(number);
+	}
+}
+
+
+int main(void)
+{
+	int a ;
+	printf("정수를 입력하시오:");
+	scanf_s("%d", &a);
+	printf("%d",show(a));
+	return 0;
+}
