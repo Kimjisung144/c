@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+int show(int,int);
+int show_2(int);
+
+int show(int number,int c)
+{
+	static int a[10]; // 리턴 저장용
+	static int b = 10*(c-1); // 곱하기 용
+	static int i = 0; // 곱하기 용
+	
+
+	a[i] = number / b;
+	
+	if (number / b < 0)
+	{
+		return 0;
+	}
+	else
+	{
+		i++;
+		b /= 10;
+		return a[i] + show(number,c);
+	}
+
+}
+
+int show_2(int number)
+{
+	int b = 1;
+	int count = 0;
+	while (1)
+	{
+		if (number / b > 0)
+		{
+			b*=10;
+			count++;
+		}
+		else
+		{
+			break;
+		}
+	}
+	return count;
+}
+
+int main(void)
+{
+	int a ;
+	printf("정수를 입력하시오:");
+	scanf_s("%d", &a);
+
+	printf("%d",show(a, show_2(a)));
+	return 0;
+}
