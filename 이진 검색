@@ -1,0 +1,59 @@
+#include <stdio.h>
+#include <time.h> // 시트값
+#include <stdlib.h> // rand함수 사용
+#include <math.h>
+
+#define SIZE 10
+
+int main()
+{
+	int find; // 찾아야 하는 값
+	int a[SIZE] = { 29,30,11,15,40,51,64,7,9,1 }; // 배열
+	int temp=0; //임시 변수
+	int k = 0; // 중간 인덱스
+	int f = 0; // 처음인덱스   SIZE는 마지막 인덱스
+	int l = SIZE - 1; // 마지막 인덱스
+
+	for (int i = 0; i < SIZE; i++) // 배열 정렬
+	{
+		for (int j = 0; j < SIZE; j++)
+		{
+			if (a[i]>a[j] && i<j) // i번째 값이 j값보다 클때 단 조건은 i가 j보다 작을때
+			{
+				temp = a[j]; // 서로 바꾸기
+				a[j] = a[i];
+				a[i] = temp;
+			}
+		}
+	}
+	for (int i = 0; i < SIZE; i++)
+	{
+		printf("%d ", a[i]);
+	}
+	printf("\n");
+	printf("찾아야하는 값을 입력해주세요:");
+	scanf_s("%d", &find);
+	while (1)
+	{
+		
+
+		k = (int)(floor((l + f) / 2.0));
+
+		if (a[k] > find) // 찾는 값이 중간값보다 작을때
+		{
+			l = k - 1; // k값보다 작기에 k이상 인덱스는 필요없어서 마지막 인덱스를 k값보다 한칸 아래로 인덱스로 조정
+		}
+		else if (a[k] < find)
+		{
+			f = k + 1; // k값보다 크기에 k이하 인덱스는 필요없어서 마지막 인덱스를 k값보다 한칸 아래로 인덱스로 조정
+			printf("f는 %d", f);
+		}
+		else
+		{
+			printf("%d값은 %d 위치에 있습니다.", find, k);
+			break;
+		}
+		printf("k값 = %d\n", k);
+	}
+	return 0;
+}
