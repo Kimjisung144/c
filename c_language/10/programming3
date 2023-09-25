@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <time.h> // 시트값
+#include <stdlib.h> // rand함수 사용
+#include <math.h>
+
+int google(int a[],int b[],int n) 
+{
+	static int count = 0;
+	if (a[n] != b[n])
+	{
+		count++;
+		if (n == 9)
+		{
+			printf("\n %d", count);
+		}
+		return 0;
+	}
+	else
+	{
+		if (n == 9)
+		{
+			printf("\n %d", count);
+		}
+		return 1;
+	}
+	
+}
+
+int main()
+{
+	int a[10] = { 1,2,3,4,5,6,7,8,9,10 };
+	int b[10] = { 1,2,3,4,6,5,7,8,9,10 };
+	for (int i = 0; i < 10; i++)
+	{
+		printf("%d", google(a, b, i));
+	}
+	return 0;
+}
