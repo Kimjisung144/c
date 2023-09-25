@@ -1,0 +1,14 @@
+#include <stdio.h>
+#include <time.h> // 시트값
+#include <stdlib.h> // rand함수 사용
+#include <math.h>
+
+int main()
+{
+	int a[12] = { 31,29,31,30,31,30,31,31,30,31,30,31 };
+	for (int i = 0; i < 12; i++)
+	{
+		printf("%d월은 %d까지 있습니다.\n",i+1,a[i]);
+	}
+	return 0;
+}
