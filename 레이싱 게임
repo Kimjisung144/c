@@ -3,6 +3,7 @@
 #include <stdlib.h> // rand함수 사용
 #include <windows.h> // sleep 함수 사용
 
+
 void track(int val)
 {
 	for (int i = 1; i <= 200; i++)
@@ -17,7 +18,7 @@ void track(int val)
 	printf("\n");
 }
 
-void cal(int distance ,int player)
+void cal(int distance, int player)
 {
 
 	printf("player%d\n", player);
@@ -42,13 +43,13 @@ int main()
 
 	srand(time(NULL)); //랜덤 함수 seed값 
 
-	while (num1  < 200 && num2  < 200) // 플레이어 한명이라도 결승선에 도착하면 중지
+	while (num1 < 200 && num2 < 200) // 플레이어 한명이라도 결승선에 도착하면 중지
 	{
 		count1 = count1 + 1; // 경과시간 증가
-		num1 = num1 + 1+(rand() % 10); // player1에 기존값에 1~10까지 랜덤수 더하기 1를 더하는 이유는 0을 제외하기 위한 것
-		num2 = num2 + 1+(rand() % 10); // player2에 기존값에 1~10까지 랜덤수 더하기
+		num1 = num1 + 1 + (rand() % 10); // player1에 기존값에 1~10까지 랜덤수 더하기 1를 더하는 이유는 0을 제외하기 위한 것
+		num2 = num2 + 1 + (rand() % 10); // player2에 기존값에 1~10까지 랜덤수 더하기
 
-		printf("%d초\n",count1); //경과시간 출력
+		printf("%d초\n", count1); //경과시간 출력
 		printf("%d %dm\n", player1, num1);
 		cal(num1, player1);
 		printf("%d %dm\n", player2, num2);
@@ -56,12 +57,13 @@ int main()
 		printf("\n");
 
 		Sleep(1000);//1초 딜레이
+		system("cls");
 	}
 	if (num1 > num2)
 	{
 		printf("player1이 이겼습니다.");
 	}
-	else if (num1 < num2 )
+	else if (num1 < num2)
 	{
 		printf("player2이 이겼습니다.");
 	}
