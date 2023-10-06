@@ -57,7 +57,7 @@ int main()
 		printf("\n");
 
 		Sleep(1000);//1초 딜레이
-		system("cls");
+		system("cls");//화면 지우기
 	}
 	if (num1 > num2)
 	{
