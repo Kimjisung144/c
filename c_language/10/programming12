@@ -1,0 +1,30 @@
+#include<stdio.h>
+#include<time.h>
+#include <stdlib.h>
+
+
+void scalar_mult(int scalar[3][3])
+{
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			scalar[i][j] *= 2;
+		}
+	}
+}
+int main()
+{
+	int scalar[3][3] = {{1,2,3},
+						{4,5,6},
+						{7,8,9} };
+	scalar_mult(scalar);
+	for (int i = 0; i < 3; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
+			printf("%d ", scalar[i][j]);
+		}
+	}
+	return 0;
+}
