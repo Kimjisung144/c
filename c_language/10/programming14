@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <Windows.h>
+void area_set(char area[10][10])
+{
+	srand(time(NULL));
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			area[i][j] = '.';
+		}
+	}
+	
+}
+
+void area_move(char area[10][10],int count)
+{
+	int move;
+	int col;
+	int row;
+	static int colo;
+	static int rows;
+	if (count == 1)
+	{
+		col = rand() % 10;
+		row = rand() % 10;
+		area[col][row] = '*';
+		colo = col;
+		rows = row;
+	}
+	move = rand() % 8;
+	switch (move)
+	{
+		case 0:
+			area[colo - 1][rows] = '*';
+			break;
+		case 1:
+			area[colo - 1][rows+1] = '*';
+			break;
+		case 2:
+			area[colo][rows + 1] = '*';
+			break;
+		case 3:
+			area[colo+1][rows + 1] = '*';
+			break;
+		case 4:
+			area[colo + 1][rows] = '*';
+			break;
+		case 5:
+			area[colo + 1][rows - 1] = '*';
+			break;
+		case 6:
+			area[colo][rows - 1] = '*';
+			break;
+		case 7:
+			area[colo - 1][rows - 1] = '*';
+			break;
+	}
+}
+
+void area_print(char area[10][10])
+{
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			printf("%c ",area[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+int main()
+{
+	char area[10][10] = { 0 }; // 판
+	area_set(area);// 초기 세팅
+	
+	for (int i = 0; i < 10; i++)
+	{
+		area_move(area,i);
+		area_print(	area);
+		Sleep(1000);
+		if(i<9)
+		{
+			system("cls");
+		}
+	}
+	return 0;
+}
