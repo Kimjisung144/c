@@ -80,7 +80,7 @@ int main()
 	for (int i = 0; i < 10; i++)
 	{
 		area_move(area,i);
-		area_print(	area);
+		area_print(area);
 		Sleep(1000);
 		if(i<9)
 		{
