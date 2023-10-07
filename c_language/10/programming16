@@ -1,0 +1,87 @@
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <Windows.h>
+#include <conio.h>
+
+void print(char min[10][10])
+{
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			printf("%c ", min[i][j]);
+		}
+		printf("\n");
+	}
+}
+
+int main()
+{
+	char min[10][10];
+	int l, r,c;
+	l = 1;
+	r = 1;
+	for (int i = 0; i < 10; i++)
+	{
+		for (int j = 0; j < 10; j++)
+		{
+			min[i][j] = '.';
+		}
+	}
+	min[l][r] = '#';
+	min[5][5] = 'M';
+	min[6][7] = 'M';
+	min[9][9] = 'G';
+	print(min);
+	while (1)
+	{
+		c = _getch();
+		switch (c)
+		{
+			case 'w':
+				min[l][r] = '.';
+				l = l - 1;
+				min[l-1][r] = '#';
+				c = 0;
+				system("cls");
+				print(min);
+				break;
+			case 's':
+				min[l][r] = '.';
+				l = l + 1;
+				min[l][r] = '#';
+				c = 0;
+				system("cls");
+				print(min);
+				break;
+			case 'a':
+				min[l][r] = '.';
+				r = r - 1;
+				min[l][r] = '#';
+				c = 0;
+				system("cls");
+				print(min);
+				break;
+				
+			case 'd':
+				min[l][r] = '.';
+				r = r + 1;
+				min[l][r] = '#';
+				c = 0;
+				system("cls");
+				print(min);
+				break;
+			default:
+				c = 0;
+				break;
+		}
+		if (l==9 && r==9)
+		{
+			system("cls");
+			print(min);
+			break;
+		}
+	}
+	return 0;
+}
